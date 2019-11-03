@@ -23,15 +23,20 @@
  */
 
 require_once('../../../../config.php');
-require_once(__DIR__ . "/vendor/autoload.php");
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$url = new moodle_url('/mod/assign/feedback/readability/index.php');
 
 $PAGE->set_context(context_system::instance());
-$PAGE->set_url(new moodle_url('/mod/assign/feedback/readability/index.php'));
+$PAGE->set_url($url);
+$PAGE->set_pagelayout('standard');
+$PAGE->set_title(get_string('pluginname', 'assignfeedback_readability'));
+$PAGE->navbar->add(get_string('pluginname', 'assignfeedback_readability'), $url);
 
 require_login();
 require_capability('mod/assign:view', context_system::instance());
 
-$form = new \assignfeedback_readability\submit_text();
+$form = new \assignfeedback_readability\form\submit_text();
 
 echo $OUTPUT->header();
 echo $OUTPUT->heading(get_string('pluginname', 'assignfeedback_readability'));
@@ -52,10 +57,12 @@ if ($data = $form->get_data()) {
     $table->data  = [];
 
     foreach ($scores as $name => $score) {
-        $table->data[] = [$name, $score];
+        $table->data[] = [get_string($name, 'assignfeedback_readability'), $score];
     }
     
     echo html_writer::table($table);
+    $cancelbutton = new single_button($url, get_string('cancel'));
+    echo $OUTPUT->render($cancelbutton);
     echo $OUTPUT->box_end();
 
 } else {

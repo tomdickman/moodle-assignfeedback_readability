@@ -38,7 +38,7 @@ defined('MOODLE_INTERNAL') || die();
 class calculator {
 
     /**
-     * @var DaveChild\TextStatistics instance to calculate scores from.
+     * @var TS\TextStatistics instance to calculate scores from.
      */
     private $textstatistics;
 
@@ -58,6 +58,16 @@ class calculator {
 
         $results['fleschkincaidreadingease'] = $this->textstatistics->fleschKincaidReadingEase($text);
         $results['fleschkincaidgradelevel'] = $this->textstatistics->fleschKincaidGradeLevel($text);
+        $results['gunningfogscore'] = $this->textstatistics->gunningFogScore($text);
+        $results['colemanliauindex'] = $this->textstatistics->colemanLiauIndex($text);
+        $results['smogindex'] = $this->textstatistics->smogIndex($text);
+        $results['automatedreadabilityindex'] = $this->textstatistics->automatedReadabilityIndex($text);
+        $results['dalechallreadabilityscore'] = $this->textstatistics->daleChallReadabilityScore($text);
+        $results['dalechalldifficultwordcount'] = $this->textstatistics->daleChallDifficultWordCount($text);
+        $results['spachereadabilityscore'] = $this->textstatistics->spacheReadabilityScore($text);
+        $results['spachedifficultwordcount'] = $this->textstatistics->spacheDifficultWordCount($text);
+        $results['wordcount'] = $this->textstatistics->wordCount($text);
+        $results['averagewordspersentence'] = round($this->textstatistics->averageWordsPerSentence($text), 2);
 
         return $results;
     }

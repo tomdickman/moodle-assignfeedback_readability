@@ -1,0 +1,2 @@
+# Exclude composer install dependencies.
+vendor/

@@ -22,20 +22,22 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace assignfeedback_readability;
-
-use moodleform;
+namespace assignfeedback_readability\form;
 
 defined('MOODLE_INTERNAL') || die();
 
-class submit_text extends moodleform {
+global $CFG;
+require_once($CFG->libdir . '/formslib.php');
+
+class submit_text extends \moodleform {
 
     public function definition() {
         $mform = $this->_form;
 
-        $mform->addElement('textarea', 'content', get_string('content', 'assignfeedback_readability'), ['rows' => 15, 'cols' => 40]);
+        $mform->addElement('textarea', 'content', get_string('content', 'assignfeedback_readability'), ['rows' => 15, 'cols' => 150]);
+        $mform->addHelpButton('content', 'content', 'assignfeedback_readability');
 
-        $this->add_action_buttons();
+        $this->add_action_buttons(false, get_string('calculate', 'assignfeedback_readability'));
     }
 
 }

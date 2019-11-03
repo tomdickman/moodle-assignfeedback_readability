@@ -25,6 +25,9 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->version   = 2019110100;
-$plugin->requires  = 2018120306;
+$plugin->requires  = 2018120306;                // Designed for Moodle 3.6.6+.
 $plugin->component = 'assignfeedback_readability';
+
+$plugin->maturity = MATURITY_ALPHA;             // This version's maturity level.
+
 

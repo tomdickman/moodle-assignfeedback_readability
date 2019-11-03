@@ -22,7 +22,22 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 $string['pluginname'] = 'Readability';
-$string['content'] = 'Text to score';
+
+$string['automatedreadabilityindex'] = 'Automated readability index';
+$string['averagewordspersentence'] = 'Average worlds per sentence';
+$string['calculate'] = 'Calculate';
+$string['colemanliauindex'] = 'Coleman-Liau index';
+$string['content'] = 'Text content to score';
 $string['content_help'] = 'UTF-8 encoded text for scoring';
+$string['dalechalldifficultwordcount'] = 'Dale-Chall difficult word count';
+$string['dalechallreadabilityscore'] = 'Dale-Chall readability score';
+$string['fleschkincaidreadingease'] = 'Flesch-Kincaid reading ease';
+$string['fleschkincaidgradelevel'] = 'Flesch-Kincaid grade level';
+$string['gunningfogscore'] = 'Gunning Fog score';
 $string['name'] = 'Test name';
 $string['score'] = 'Test score';
+$string['smogindex'] = 'SMOG index';
+$string['spachedifficultwordcount'] = 'Spache difficult word count';
+$string['spachereadabilityscore'] = 'Spache readability score';
+$string['value'] = 'Value';
+$string['wordcount'] = 'Word count';
