@@ -1,8 +1,8 @@
-##Moodle Readability Plugin
+## Moodle Readability Plugin
 
 This assignment feedback plugin is designed to users to check the readability of an assignment to determine how difficult it is to comprehend and understand.
 
-###Installation
+### Installation
 
 This plugin uses Composer in order to load required external libraries on installation for the scoring of text readability.
 
@@ -14,3 +14,9 @@ This plugin uses Composer in order to load required external libraries on instal
     - `php composer.phar install`
     
 3. You should now have the plugin dependencies installed correctly.
+
+### License
+
+This plugin utilises Dave Child's [Text-Statistics API](https://github.com/DaveChild/Text-Statistics) which is licensed under the [2 Clause BSD license](http://www.opensource.org/licenses/bsd-license.php).
+
+This plugin itself is licensed under the [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html) license as a plugin intended for use in a Moodle instance.
