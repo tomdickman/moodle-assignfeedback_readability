@@ -37,6 +37,8 @@ defined('MOODLE_INTERNAL') || die();
  */
 class calculator {
 
+    const AVERAGE_READING_SPEED = 180;
+
     /**
      * @var TS\TextStatistics instance to calculate scores from.
      */
@@ -68,8 +70,20 @@ class calculator {
         $results['spachedifficultwordcount'] = $this->textstatistics->spacheDifficultWordCount($text);
         $results['wordcount'] = $this->textstatistics->wordCount($text);
         $results['averagewordspersentence'] = round($this->textstatistics->averageWordsPerSentence($text), 2);
+        $results['readingtime'] = $this->calculate_reading_time($text);
 
         return $results;
+    }
+
+    private function calculate_reading_time($text) {
+        $decimaltime = $this->textstatistics->wordCount($text) / self::AVERAGE_READING_SPEED;
+        $hours = floor($decimaltime / 60);
+        $minutes = floor($decimaltime % 60);
+        $seconds = ($decimaltime - floor($decimaltime)) * 60;
+
+        $formattedtime = sprintf("%02d:%02d:%02d", $hours, $minutes, $seconds);
+
+        return $formattedtime;
     }
 
 }
