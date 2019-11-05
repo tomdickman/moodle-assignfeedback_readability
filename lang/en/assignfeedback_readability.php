@@ -35,6 +35,7 @@ $string['fleschkincaidreadingease'] = 'Flesch-Kincaid reading ease';
 $string['fleschkincaidgradelevel'] = 'Flesch-Kincaid grade level';
 $string['gunningfogscore'] = 'Gunning Fog score';
 $string['name'] = 'Test name';
+$string['readingtime'] = 'Average reading time (HH:MM:SS)';
 $string['score'] = 'Test score';
 $string['smogindex'] = 'SMOG index';
 $string['spachedifficultwordcount'] = 'Spache difficult word count';
